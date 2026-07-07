@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils
 import dev.bluesheep.superfeed.data.SuperFeedBlockTagsProvider
 import dev.bluesheep.superfeed.data.SuperFeedItemTagsProvider
 import dev.bluesheep.superfeed.registry.SuperFeedItems
+import net.minecraft.resources.ResourceLocation
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.fml.common.Mod
@@ -33,5 +34,9 @@ object SuperFeed {
         val blockTags = SuperFeedBlockTagsProvider(packOutput, event.lookupProvider, existingFileHelper)
         event.addProvider(blockTags)
         event.addProvider(SuperFeedItemTagsProvider(packOutput, event.lookupProvider, blockTags.contentsGetter(), existingFileHelper))
+    }
+
+    fun rl(path: String): ResourceLocation {
+        return ResourceLocation.fromNamespaceAndPath(MODID, path)
     }
 }
