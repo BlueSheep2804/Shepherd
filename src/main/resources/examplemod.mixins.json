@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "dev.bluesheep.examplemod.mixin",
+  "package": "dev.bluesheep.superfeed.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "injectors": {
