@@ -2,7 +2,10 @@
   "required": true,
   "package": "dev.bluesheep.superfeed.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "refmap": "superfeed.refmap.json",
+  "mixins": [
+    "SheepMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },
