@@ -5,6 +5,7 @@ import dev.bluesheep.shepherd.data.ShepherdBlockProvider
 import dev.bluesheep.shepherd.data.ShepherdBlockTagsProvider
 import dev.bluesheep.shepherd.data.ShepherdItemModelProvider
 import dev.bluesheep.shepherd.data.ShepherdItemTagsProvider
+import dev.bluesheep.shepherd.data.ShepherdRecipeProvider
 import dev.bluesheep.shepherd.registry.ShepherdBlocks
 import dev.bluesheep.shepherd.registry.ShepherdItems
 import net.minecraft.resources.ResourceLocation
@@ -40,6 +41,7 @@ object Shepherd {
         val blockTags = ShepherdBlockTagsProvider(packOutput, event.lookupProvider, existingFileHelper)
         event.addProvider(blockTags)
         event.addProvider(ShepherdItemTagsProvider(packOutput, event.lookupProvider, blockTags.contentsGetter(), existingFileHelper))
+        event.addProvider(ShepherdRecipeProvider(packOutput, event.lookupProvider))
         event.addProvider(ShepherdBlockProvider(packOutput, existingFileHelper))
         event.addProvider(ShepherdItemModelProvider(packOutput, existingFileHelper))
     }

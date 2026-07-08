@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:grass_block"
+    },
+    {
+      "item": "shepherd:super_wheat"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "shepherd:super_grass_block"
+  }
+}
