@@ -2,6 +2,7 @@ package dev.bluesheep.superfeed.registry
 
 import dev.bluesheep.superfeed.SuperFeed
 import net.minecraft.core.registries.Registries
+import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
 import net.neoforged.neoforge.registries.DeferredHolder
@@ -12,6 +13,8 @@ object SuperFeedItems {
     val REGISTRY: DeferredRegister.Items = DeferredRegister.createItems(SuperFeed.MODID)
 
     val SUPER_WHEAT: Item by REGISTRY.registerSimpleItem("super_wheat")
+
+    val SUPER_GRASS_BLOCK: BlockItem by REGISTRY.registerSimpleBlockItem("super_grass_block") { SuperFeedBlocks.SUPER_GRASS_BLOCK }
 
     val CREATIVE_TAB_REGISTRY: DeferredRegister<CreativeModeTab> = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, SuperFeed.MODID)
     val TAB: DeferredHolder<CreativeModeTab, CreativeModeTab> = CREATIVE_TAB_REGISTRY.register("tab") { ->

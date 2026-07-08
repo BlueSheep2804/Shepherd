@@ -3,6 +3,7 @@ package dev.bluesheep.superfeed
 import com.mojang.logging.LogUtils
 import dev.bluesheep.superfeed.data.SuperFeedBlockTagsProvider
 import dev.bluesheep.superfeed.data.SuperFeedItemTagsProvider
+import dev.bluesheep.superfeed.registry.SuperFeedBlocks
 import dev.bluesheep.superfeed.registry.SuperFeedItems
 import net.minecraft.resources.ResourceLocation
 import net.neoforged.bus.api.SubscribeEvent
@@ -20,6 +21,7 @@ object SuperFeed {
     val LOGGER: Logger = LogUtils.getLogger()
 
     init {
+        SuperFeedBlocks.REGISTRY.register(MOD_BUS)
         SuperFeedItems.REGISTRY.register(MOD_BUS)
         SuperFeedItems.CREATIVE_TAB_REGISTRY.register(MOD_BUS)
     }

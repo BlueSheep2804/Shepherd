@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "refmap": "superfeed.refmap.json",
   "mixins": [
+    "EatBlockGoalMixin",
     "SheepMixin"
   ],
   "injectors": {
