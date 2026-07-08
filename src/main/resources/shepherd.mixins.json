@@ -1,8 +1,8 @@
 {
   "required": true,
-  "package": "dev.bluesheep.superfeed.mixin",
+  "package": "dev.bluesheep.shepherd.mixin",
   "compatibilityLevel": "JAVA_21",
-  "refmap": "superfeed.refmap.json",
+  "refmap": "shepherd.refmap.json",
   "mixins": [
     "EatBlockGoalMixin",
     "SheepMixin"

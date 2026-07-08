@@ -1,6 +1,6 @@
-package dev.bluesheep.superfeed.mixin;
+package dev.bluesheep.shepherd.mixin;
 
-import dev.bluesheep.superfeed.mixinimpl.SheepMixinImpl;
+import dev.bluesheep.shepherd.mixinimpl.SheepMixinImpl;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.animal.Sheep;

@@ -1,7 +1,7 @@
-package dev.bluesheep.superfeed.data
+package dev.bluesheep.shepherd.data
 
-import dev.bluesheep.superfeed.SuperFeed
-import dev.bluesheep.superfeed.registry.SuperFeedItems
+import dev.bluesheep.shepherd.Shepherd
+import dev.bluesheep.shepherd.registry.ShepherdItems
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.data.tags.ItemTagsProvider
@@ -10,14 +10,14 @@ import net.minecraft.world.level.block.Block
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import java.util.concurrent.CompletableFuture
 
-class SuperFeedItemTagsProvider(
+class ShepherdItemTagsProvider(
     output: PackOutput,
     lookupProvider: CompletableFuture<HolderLookup.Provider>,
     blockTags: CompletableFuture<TagLookup<Block>>,
     existingFileHelper: ExistingFileHelper
-) : ItemTagsProvider(output, lookupProvider, blockTags, SuperFeed.MODID, existingFileHelper) {
+) : ItemTagsProvider(output, lookupProvider, blockTags, Shepherd.MODID, existingFileHelper) {
     override fun addTags(provider: HolderLookup.Provider) {
         tag(ItemTags.SHEEP_FOOD)
-            .add(SuperFeedItems.SUPER_WHEAT)
+            .add(ShepherdItems.SUPER_WHEAT)
     }
 }

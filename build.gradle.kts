@@ -20,11 +20,11 @@ object ModInfo {
     const val parchment_minecraft_version = minecraft_version
     const val parchment_mappings_version = "2024.11.17"
 
-    const val mod_id = "superfeed"
-    const val mod_name = "Super Feed"
+    const val mod_id = "shepherd"
+    const val mod_name = "Shepherd"
     const val mod_license = "MIT"
     const val mod_version = "1.0.0"
-    const val mod_group_id = "dev.bluesheep.superfeed"
+    const val mod_group_id = "dev.bluesheep.shepherd"
 
     const val curseforge_project_id = ""
     const val modrinth_project_id = ""

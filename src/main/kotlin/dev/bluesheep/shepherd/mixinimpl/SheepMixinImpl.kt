@@ -1,6 +1,6 @@
-package dev.bluesheep.superfeed.mixinimpl
+package dev.bluesheep.shepherd.mixinimpl
 
-import dev.bluesheep.superfeed.registry.SuperFeedItems.SUPER_WHEAT
+import dev.bluesheep.shepherd.registry.ShepherdItems.SUPER_WHEAT
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.animal.Sheep

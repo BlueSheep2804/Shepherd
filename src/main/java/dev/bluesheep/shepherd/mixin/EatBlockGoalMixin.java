@@ -1,8 +1,8 @@
-package dev.bluesheep.superfeed.mixin;
+package dev.bluesheep.shepherd.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.bluesheep.superfeed.mixinimpl.EatBlockGoalMixinImpl;
+import dev.bluesheep.shepherd.mixinimpl.EatBlockGoalMixinImpl;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.ai.goal.EatBlockGoal;
 import net.minecraft.world.level.Level;

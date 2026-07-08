@@ -1,12 +1,12 @@
-package dev.bluesheep.superfeed.registry
+package dev.bluesheep.shepherd.registry
 
-import dev.bluesheep.superfeed.SuperFeed
+import dev.bluesheep.shepherd.Shepherd
 import net.minecraft.world.level.block.Block
 import net.neoforged.neoforge.registries.DeferredRegister
 import thedarkcolour.kotlinforforge.neoforge.forge.getValue
 
-object SuperFeedBlocks {
-    val REGISTRY: DeferredRegister.Blocks = DeferredRegister.createBlocks(SuperFeed.MODID)
+object ShepherdBlocks {
+    val REGISTRY: DeferredRegister.Blocks = DeferredRegister.createBlocks(Shepherd.MODID)
 
     val SUPER_GRASS_BLOCK: Block by REGISTRY.registerSimpleBlock("super_grass_block")
 }

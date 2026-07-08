@@ -1,10 +1,10 @@
-package dev.bluesheep.superfeed
+package dev.bluesheep.shepherd
 
 import com.mojang.logging.LogUtils
-import dev.bluesheep.superfeed.data.SuperFeedBlockTagsProvider
-import dev.bluesheep.superfeed.data.SuperFeedItemTagsProvider
-import dev.bluesheep.superfeed.registry.SuperFeedBlocks
-import dev.bluesheep.superfeed.registry.SuperFeedItems
+import dev.bluesheep.shepherd.data.ShepherdBlockTagsProvider
+import dev.bluesheep.shepherd.data.ShepherdItemTagsProvider
+import dev.bluesheep.shepherd.registry.ShepherdBlocks
+import dev.bluesheep.shepherd.registry.ShepherdItems
 import net.minecraft.resources.ResourceLocation
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
@@ -14,16 +14,16 @@ import net.neoforged.neoforge.data.event.GatherDataEvent
 import org.slf4j.Logger
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 
-@Mod(SuperFeed.MODID)
-@EventBusSubscriber(modid = SuperFeed.MODID)
-object SuperFeed {
-    const val MODID: String = "superfeed"
+@Mod(Shepherd.MODID)
+@EventBusSubscriber(modid = Shepherd.MODID)
+object Shepherd {
+    const val MODID: String = "shepherd"
     val LOGGER: Logger = LogUtils.getLogger()
 
     init {
-        SuperFeedBlocks.REGISTRY.register(MOD_BUS)
-        SuperFeedItems.REGISTRY.register(MOD_BUS)
-        SuperFeedItems.CREATIVE_TAB_REGISTRY.register(MOD_BUS)
+        ShepherdBlocks.REGISTRY.register(MOD_BUS)
+        ShepherdItems.REGISTRY.register(MOD_BUS)
+        ShepherdItems.CREATIVE_TAB_REGISTRY.register(MOD_BUS)
     }
 
     @SubscribeEvent
@@ -33,9 +33,9 @@ object SuperFeed {
     fun gatherData(event: GatherDataEvent) {
         val packOutput = event.generator.packOutput
         val existingFileHelper = event.existingFileHelper
-        val blockTags = SuperFeedBlockTagsProvider(packOutput, event.lookupProvider, existingFileHelper)
+        val blockTags = ShepherdBlockTagsProvider(packOutput, event.lookupProvider, existingFileHelper)
         event.addProvider(blockTags)
-        event.addProvider(SuperFeedItemTagsProvider(packOutput, event.lookupProvider, blockTags.contentsGetter(), existingFileHelper))
+        event.addProvider(ShepherdItemTagsProvider(packOutput, event.lookupProvider, blockTags.contentsGetter(), existingFileHelper))
     }
 
     fun rl(path: String): ResourceLocation {

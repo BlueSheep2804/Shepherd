@@ -1,16 +1,16 @@
-package dev.bluesheep.superfeed.data
+package dev.bluesheep.shepherd.data
 
-import dev.bluesheep.superfeed.SuperFeed
+import dev.bluesheep.shepherd.Shepherd
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.neoforged.neoforge.common.data.BlockTagsProvider
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import java.util.concurrent.CompletableFuture
 
-class SuperFeedBlockTagsProvider(
+class ShepherdBlockTagsProvider(
     output: PackOutput,
     lookupProvider: CompletableFuture<HolderLookup.Provider>,
     existingFileHelper: ExistingFileHelper
-) : BlockTagsProvider(output, lookupProvider, SuperFeed.MODID, existingFileHelper) {
+) : BlockTagsProvider(output, lookupProvider, Shepherd.MODID, existingFileHelper) {
     override fun addTags(p0: HolderLookup.Provider) {}
 }
