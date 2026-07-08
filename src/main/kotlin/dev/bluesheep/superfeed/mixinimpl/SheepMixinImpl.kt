@@ -14,7 +14,7 @@ object SheepMixinImpl {
             if (sheep.getAge() >= 0 && sheep.isSheared) {
                 if (!player.level().isClientSide) {
                     sheep.isSheared = false
-                    item.shrink(1)
+                    item.consume(1, player)
                     return InteractionResult.SUCCESS
                 } else {
                     return InteractionResult.CONSUME
