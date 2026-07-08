@@ -1,10 +1,12 @@
 package dev.bluesheep.shepherd.registry
 
 import dev.bluesheep.shepherd.Shepherd
+import net.minecraft.core.component.DataComponents
 import net.minecraft.core.registries.Registries
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
+import net.minecraft.world.item.Rarity
 import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
 import thedarkcolour.kotlinforforge.neoforge.forge.getValue
@@ -12,9 +14,20 @@ import thedarkcolour.kotlinforforge.neoforge.forge.getValue
 object ShepherdItems {
     val REGISTRY: DeferredRegister.Items = DeferredRegister.createItems(Shepherd.MODID)
 
-    val SUPER_WHEAT: Item by REGISTRY.registerSimpleItem("super_wheat")
+    val SUPER_WHEAT: Item by REGISTRY.registerSimpleItem(
+        "super_wheat",
+        Item.Properties()
+            .rarity(Rarity.UNCOMMON)
+            .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
+    )
 
-    val SUPER_GRASS_BLOCK: BlockItem by REGISTRY.registerSimpleBlockItem("super_grass_block") { ShepherdBlocks.SUPER_GRASS_BLOCK }
+    val SUPER_GRASS_BLOCK: BlockItem by REGISTRY.registerSimpleBlockItem(
+        "super_grass_block",
+        { ShepherdBlocks.SUPER_GRASS_BLOCK },
+        Item.Properties()
+            .rarity(Rarity.UNCOMMON)
+            .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
+    )
 
     val CREATIVE_TAB_REGISTRY: DeferredRegister<CreativeModeTab> = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Shepherd.MODID)
     val TAB: DeferredHolder<CreativeModeTab, CreativeModeTab> = CREATIVE_TAB_REGISTRY.register("tab") { ->

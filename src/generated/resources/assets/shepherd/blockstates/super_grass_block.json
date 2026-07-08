@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "shepherd:block/super_grass_block"
+    }
+  }
+}
